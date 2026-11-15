@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyPoint API</title>
+    <style>
+        :root {
+            font-family: system-ui, sans-serif;
+            color: #243044;
+            background: #f3f6fb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 32px 16px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        header, section {
+            background: white;
+            padding: 28px;
+            margin-bottom: 20px;
+            border-radius: 14px;
+            border: 1px solid #e1e7f0;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #315da8;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        p, li {
+            line-height: 1.6;
+        }
+
+        .status {
+            color: #247b49;
+            font-weight: 600;
+        }
+
+        .endpoint {
+            padding: 12px 0;
+            border-bottom: 1px solid #e1e7f0;
+            overflow-wrap: anywhere;
+        }
+
+        .endpoint:last-child {
+            border-bottom: none;
+        }
+
+        code {
+            background: #edf2fa;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            header, section {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>StudyPoint API</h1>
+            <p>
+                StudyPoint is an AI-powered study assistant that
+                helps students organize courses, manage lecture
+                materials, and prepare for exams.
+            </p>
+            <p class="status">API running | Version 1.0.0</p>
+        </header>
+
+        <section>
+            <h2>Project Team</h2>
+            <ul>
+                <li>
+                    <strong>Dev A</strong> (ID: TODO)
+                    — Course CRUD API and mock storage
+                </li>
+                <li>
+                    <strong>Dev B</strong> (ID: TODO)
+                    — Authentication, authorization, and validation
+                </li>
+                <li>
+                    <strong>Elyar Nuraliyev</strong> (ID: 12830)
+                    — Greeting endpoint, integration, and documentation
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Available API Endpoints</h2>
+
+            <div class="endpoint">
+                <code>GET /api/v1/courses</code>
+                — List accessible courses
+            </div>
+
+            <div class="endpoint">
+                <code>GET /api/v1/courses/{id}</code>
+                — Retrieve a course
+            </div>
+
+            <div class="endpoint">
+                <code>POST /api/v1/courses</code>
+                — Create a course
+            </div>
+
+            <div class="endpoint">
+                <code>PUT /api/v1/courses/{id}</code>
+                — Update a course
+            </div>
+
+            <div class="endpoint">
+                <code>DELETE /api/v1/courses/{id}</code>
+                — Delete a course
+            </div>
+
+            <div class="endpoint">
+                <code>GET /api/v1/greeting</code>
+                — Display this page
+            </div>
+        </section>
+
+        <section>
+            <h2>Documentation</h2>
+            <p>
+                Interactive API documentation:
+                <a href="/docs">Swagger UI</a>
+            </p>
+            <p>
+                This is an educational API prototype using mocked
+                data instead of a production database.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
