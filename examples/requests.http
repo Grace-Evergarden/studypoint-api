@@ -1,0 +1,113 @@
+### Courses — contributed by Developer A (Developer C owns this file and merges sections)
+### Run with the VS Code "REST Client" extension or JetBrains HTTP Client.
+### Restart the server first to start from the seed data.
+
+@baseUrl = http://127.0.0.1:8000/api/v1
+@userA = Bearer user-a-token
+@userB = Bearer user-b-token
+@admin = Bearer admin-token
+
+### List: user A sees only course_101 and course_102 -> 200
+GET {{baseUrl}}/courses
+Authorization: {{userA}}
+
+### List: admin sees all four seed courses -> 200
+GET {{baseUrl}}/courses
+Authorization: {{admin}}
+
+### List with pagination: second page of size 3 -> 200, data = [course_202]
+GET {{baseUrl}}/courses?page=2&perPage=3
+Authorization: {{admin}}
+
+### List with invalid page -> 400 VALIDATION_ERROR
+GET {{baseUrl}}/courses?page=0
+Authorization: {{userA}}
+
+### Get own course -> 200
+GET {{baseUrl}}/courses/course_101
+Authorization: {{userA}}
+
+### Get another student's course -> 403 FORBIDDEN
+GET {{baseUrl}}/courses/course_201
+Authorization: {{userA}}
+
+### Admin gets user B's course -> 200
+GET {{baseUrl}}/courses/course_201
+Authorization: {{admin}}
+
+### Get nonexistent course -> 404 NOT_FOUND
+GET {{baseUrl}}/courses/course_999
+Authorization: {{admin}}
+
+### Create as user A -> 201, id course_301, ownerId user-a
+POST {{baseUrl}}/courses
+Authorization: {{userA}}
+Content-Type: application/json
+
+{
+  "title": "Biology",
+  "description": "Cells and genetics"
+}
+
+### Create with a title that is too short -> 400 VALIDATION_ERROR
+POST {{baseUrl}}/courses
+Authorization: {{userA}}
+Content-Type: application/json
+
+{
+  "title": "AI"
+}
+
+### Update own course -> 200
+PUT {{baseUrl}}/courses/course_101
+Authorization: {{userA}}
+Content-Type: application/json
+
+{
+  "title": "Advanced Computer Graphics",
+  "description": "Ray tracing and shaders"
+}
+
+### Update another student's course -> 403 FORBIDDEN
+PUT {{baseUrl}}/courses/course_101
+Authorization: {{userB}}
+Content-Type: application/json
+
+{
+  "title": "Hijacked"
+}
+
+### Admin updates user B's course -> 200, ownerId stays user-b
+PUT {{baseUrl}}/courses/course_201
+Authorization: {{admin}}
+Content-Type: application/json
+
+{
+  "title": "Linear Algebra II",
+  "description": "Eigenvalues and SVD"
+}
+
+### Update nonexistent course -> 404 NOT_FOUND
+PUT {{baseUrl}}/courses/course_999
+Authorization: {{userA}}
+Content-Type: application/json
+
+{
+  "title": "Ghost course"
+}
+
+### Delete another student's course -> 403 FORBIDDEN
+DELETE {{baseUrl}}/courses/course_202
+Authorization: {{userA}}
+
+### Delete own course -> 200, data null
+DELETE {{baseUrl}}/courses/course_102
+Authorization: {{userA}}
+
+### Admin deletes user B's course -> 200
+DELETE {{baseUrl}}/courses/course_202
+Authorization: {{admin}}
+
+### Delete nonexistent course -> 404 NOT_FOUND
+DELETE {{baseUrl}}/courses/course_999
+Authorization: {{admin}}
