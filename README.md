@@ -22,8 +22,16 @@ Replace `<repository-url>` with the repository's GitHub URL.
 
 ### 2. Create a virtual environment
 
+On Linux/macOS:
+
 ```bash
 python3 -m venv .venv
+```
+
+On Windows:
+
+```powershell
+py -m venv .venv
 ```
 
 ### 3. Activate the virtual environment
@@ -34,7 +42,7 @@ On Linux/macOS:
 source .venv/bin/activate
 ```
 
-On Windows (PowerShell):
+On Windows:
 
 ```powershell
 .venv\Scripts\Activate.ps1
