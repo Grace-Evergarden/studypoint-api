@@ -87,24 +87,29 @@ python -m pytest -v
 
 ## Contributors
 
-Team 9:
+StudyPoint API was developed by **Group 9**.
 
-| Contributor | Responsibilities |
+| Contributor | Implementation |
 |---|---|
-| Ziyaddin Musayev | CRUD endpoints, mock storage, and tests |
-| Kamran Gulmammedov | Authentication, authorization, validation, and error handling |
-| Elyar Nuraliyev | Architecture, API contract, application setup, greeting page, documentation, and integration |
+| **Ziyaddin Musayev** | `app/courses.py`, `app/store.py`, `tests/test_courses.py`, `docs/API.md`, `examples/requests.http` |
+| **Kamran Gulmammedov** | `app/auth.py`, `app/schemas.py`, `app/errors.py`, `tests/test_auth.py`, `tests/test_validation.py` |
+| **Elyar Nuraliyev (Grace)** | `app/main.py`, `app/greeting.py`, `app/templates/greeting.html`, `tests/test_greeting.py`, `README.md`, `CONTRIBUTORS.md` |
 
-Full contributor details: [CONTRIBUTORS.md](CONTRIBUTORS.md).
+For student IDs, responsibilities, and collaboration details, see [CONTRIBUTORS.md](CONTRIBUTORS.md).
 
 ### Git Contributions
 
 Output of `git shortlog -sn --all`:
 
 ```text
-[Insert actual command output after final merges]
+14  Grace
+ 5  Elyar
+ 5  ZiyaddinMusayev001
+ 1  Кемран Гульмомедов
 ```
+
+**Note:** `Grace` and `Elyar` are two Git author names used by the same contributor.
 
 ## Demonstration
 
-YouTube video: [Insert demonstration link]
+YouTube video: https://youtu.be/t75_FGTHkZQ
