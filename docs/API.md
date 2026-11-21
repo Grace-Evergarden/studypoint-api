@@ -192,7 +192,7 @@ Content-Type: application/json
   "error": {
     "code": "VALIDATION_ERROR",
     "message": "The request contains invalid or missing fields.",
-    "details": [{ "field": "title", "message": "Title must be 3–100 characters." }]
+    "details": [{ "field": "title", "message": "String should have at least 3 characters." }]
   }
 }
 ```
