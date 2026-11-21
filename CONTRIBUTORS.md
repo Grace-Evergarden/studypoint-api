@@ -6,9 +6,9 @@
 
 | Name | Student ID | Responsibilities |
 |---|---|---|
-| Ziyaddin Musayev | TODO | Course CRUD API, in-memory mock data, and CRUD tests. |
-| Kamran Gulmammedov | TODO | Token-based authentication, role-based authorization, validation, structured error handling, and related tests. |
-| Elyar Nuraliyev | TODO | Repository setup, Project architecture and shared API contract, FastAPI application initialization, HTML greeting endpoint, automated greeting tests, documentation, and integration. |
+| Ziyaddin Musayev | 19893 | Course CRUD API, in-memory mock data, and CRUD tests. |
+| Kamran Gulmammedov | 16282 | Token-based authentication, role-based authorization, validation, structured error handling, and related tests. |
+| Elyar Nuraliyev | 12830 | Repository setup, Project architecture and shared API contract, FastAPI application initialization, HTML greeting endpoint, automated greeting tests, documentation, and integration. |
 
 ## Collaboration
 

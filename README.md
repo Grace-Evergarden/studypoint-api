@@ -1,8 +1,8 @@
 # StudyPoint API
 
-Backend REST API prototype for **StudyPoint**, an AI-powered study assistant that helps students organize courses and study materials.
+A mock REST API prototype for **StudyPoint**, an AI-powered study assistant that helps students organize courses and study materials.
 
-This prototype uses **Python and FastAPI**, with mocked data instead of a database.
+Built with Python and FastAPI for a Software Engineering assignment.
 
 ## Requirements
 
@@ -11,44 +11,30 @@ This prototype uses **Python and FastAPI**, with mocked data instead of a databa
 
 ## Installation
 
-### 1. Clone the repository
+Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Grace-Evergarden/studypoint-api.git
 cd studypoint-api
 ```
 
-Replace `<repository-url>` with the repository's GitHub URL.
+Create a virtual environment:
 
-### 2. Create a virtual environment
-
-On Linux/macOS:
+**Linux/macOS:**
 
 ```bash
 python3 -m venv .venv
-```
-
-On Windows:
-
-```powershell
-py -m venv .venv
-```
-
-### 3. Activate the virtual environment
-
-On Linux/macOS:
-
-```bash
 source .venv/bin/activate
 ```
 
-On Windows:
+**Windows (PowerShell):**
 
 ```powershell
+py -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
-### 4. Install dependencies
+Install dependencies:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -56,18 +42,69 @@ python -m pip install -r requirements.txt
 
 ## Running the API
 
-From the repository root, with the virtual environment activated:
+Start the server:
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-The API will run at:
+The API is available at `http://127.0.0.1:8000`.
 
-http://127.0.0.1:8000
+- **Interactive documentation:** http://127.0.0.1:8000/docs
+- **HTML greeting page:** http://127.0.0.1:8000/api/v1/greeting
+- **API reference:** [docs/API.md](docs/API.md)
+- **Example requests:** [examples/requests.http](examples/requests.http)
 
-Interactive API documentation (Swagger UI):
+Press `Ctrl+C` to stop the server.
 
-http://127.0.0.1:8000/docs
+**Note:** The application uses in-memory mock data. Changes to courses are not persistent and will be lost when the server restarts.
 
-Press `Ctrl + C` in the terminal to stop the server.
+## Authentication
+
+The course endpoints require a bearer token.
+
+| Token | Access |
+|---|---|
+| `user-a-token` | Student A's courses |
+| `user-b-token` | Student B's courses |
+| `admin-token` | All courses |
+
+Use the `Authorization` header:
+
+```http
+Authorization: Bearer user-a-token
+```
+
+The greeting endpoint does not require authentication.
+
+## Testing
+
+Run all automated tests:
+
+```bash
+python -m pytest -v
+```
+
+## Contributors
+
+Team 9:
+
+| Contributor | Responsibilities |
+|---|---|
+| Ziyaddin Musayev | CRUD endpoints, mock storage, and tests |
+| Kamran Gulmammedov | Authentication, authorization, validation, and error handling |
+| Elyar Nuraliyev | Architecture, API contract, application setup, greeting page, documentation, and integration |
+
+Full contributor details: [CONTRIBUTORS.md](CONTRIBUTORS.md).
+
+### Git Contributions
+
+Output of `git shortlog -sn --all`:
+
+```text
+[Insert actual command output after final merges]
+```
+
+## Demonstration
+
+YouTube video: [Insert demonstration link]

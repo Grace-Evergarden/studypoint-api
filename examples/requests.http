@@ -111,3 +111,13 @@ Authorization: {{admin}}
 ### Delete nonexistent course -> 404 NOT_FOUND
 DELETE {{baseUrl}}/courses/course_999
 Authorization: {{admin}}
+
+### Missing authentication -> 401 UNAUTHORIZED
+GET {{baseUrl}}/courses
+
+### Invalid token -> 401 UNAUTHORIZED
+GET {{baseUrl}}/courses
+Authorization: Bearer invalid-token
+
+### HTML greeting page -> 200 text/html
+GET {{baseUrl}}/greeting
